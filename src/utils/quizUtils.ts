@@ -1,0 +1,79 @@
+import { Question, QuizQuestion } from "../types/quiz";
+
+export const decodeHTML = (html: string) => {
+  const txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+};
+
+export const shuffleArray = <T>(array: T[]): T[] => {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+};
+
+export const generateUniqueId = (prefix: string = ""): string => {
+  return `${prefix ? "${prefix}-" : ""}${Date.now().toString(
+    36
+  )}-${Math.random().toString(36).substring(2, 9)}`;
+};
+
+export const transformQuestions = (questions: Question[]): QuizQuestion[] => {
+  return questions.map((question) => {
+    const questionId = generateUniqueId("q");
+
+    const correctAnswer = {
+      id: generateUniqueId("a-correct"),
+      text: decodeHTML(question.correct_answer),
+      isCorrect: true,
+    };
+
+    const incorrectAnswers = question.incorrect_answers.map((answer) => ({
+      id: generateUniqueId("a-incorrect"),
+      text: decodeHTML(answer),
+      isCorrect: false,
+    }));
+
+    const allAnswers = shuffleArray([correctAnswer, ...incorrectAnswers]);
+
+    return {
+      id: questionId,
+      category: question.category,
+      type: question.type,
+      difficulty: question.difficulty,
+      question: decodeHTML(question.question),
+      answers: allAnswers,
+    };
+  });
+};
+
+export const calculateScore = (
+  questions: QuizQuestion[],
+  userAnswers: Record<string, string>
+): number => {
+  let score = 0;
+
+  questions.forEach((question) => {
+    const userAnswerId = userAnswers[question.id];
+
+    const selectedAnswer = question.answers.find(
+      (answer) => answer.id === userAnswerId
+    );
+
+    if (selectedAnswer && selectedAnswer.isCorrect) {
+      score += 1;
+    }
+  });
+  return score;
+};
+
+export const getScoreColor = (score: number, total: number): string => {
+  if (score <= 1) return "text-quiz-incorrect";
+
+  if (score <= 3) return "text-quiz-warning";
+
+  return "text-quiz-correct";
+};
