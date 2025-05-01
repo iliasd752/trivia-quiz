@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CategoryResponse, QuizResponse } from "../types/quiz";
+import { CategoryResponse, QuizParams, QuizResponse } from "../types/quiz";
 
 export const fetchCategories = async (): Promise<CategoryResponse> => {
   try {
