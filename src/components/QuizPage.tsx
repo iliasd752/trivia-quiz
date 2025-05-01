@@ -83,7 +83,12 @@ const QuizPage = () => {
 
       {allQuestionsAnswered && (
         <div className="mt-8 text-center">
-          <button onClick={handleSubmit}>Submit Quiz</button>
+          <button
+            className="w-2/5 bg-blue-700 hover:bg-blue-800 text-white py-2 px-4 rounded-md"
+            onClick={handleSubmit}
+          >
+            Submit Quiz
+          </button>
         </div>
       )}
     </div>

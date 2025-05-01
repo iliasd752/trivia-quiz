@@ -1,3 +1,5 @@
+import QuizForm from "../components/QuizForm";
+
 export default function Index() {
-  return <div>Index</div>;
+  return <QuizForm />;
 }
