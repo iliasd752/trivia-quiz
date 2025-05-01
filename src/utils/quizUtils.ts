@@ -15,22 +15,22 @@ export const shuffleArray = <T>(array: T[]): T[] => {
   return newArray;
 };
 
-export const generateUniqueId = (prefix: string = ""): number => {
+export const generateUniqueId = (): number => {
   return Date.now() + Math.floor(Math.random() * 1000);
 };
 
 export const transformQuestions = (questions: Question[]): QuizQuestion[] => {
   return questions.map((question) => {
-    const questionId = generateUniqueId("q");
+    const questionId = generateUniqueId();
 
     const correctAnswer = {
-      id: generateUniqueId("a-correct"),
+      id: generateUniqueId(),
       text: decodeHTML(question.correct_answer),
       isCorrect: true,
     };
 
     const incorrectAnswers = question.incorrect_answers.map((answer) => ({
-      id: generateUniqueId("a-incorrect"),
+      id: generateUniqueId(),
       text: decodeHTML(answer),
       isCorrect: false,
     }));
@@ -68,7 +68,7 @@ export const calculateScore = (
   return score;
 };
 
-export const getScoreColor = (score: number, total: number): string => {
+export const getScoreColor = (score: number): string => {
   if (score <= 1) return "text-quiz-incorrect";
 
   if (score <= 3) return "text-quiz-warning";
