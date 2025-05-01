@@ -60,7 +60,12 @@ const QuizForm = () => {
             onChange={(e) => setSelectedCategory(Number(e.target.value))}
             className="w-full p-2 border rounded-md bg-white"
           >
-            <option>Select a Category</option>
+            <option value={0}>Select a Category</option>
+            {categories.map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            ))}
           </select>
         </div>
       </div>
