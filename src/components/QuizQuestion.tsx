@@ -3,7 +3,7 @@ import { QuizQuestion as QuizQuestionType } from "../types/quiz";
 interface QuizQuestionProps {
   question: QuizQuestionType;
   userAnswer: number | null;
-  onAnswerSelected: (questionId: number, answerId: number) => void;
+  onAnswerSelected?: (questionId: number, answerId: number) => void;
   showResult?: boolean;
 }
 
@@ -44,7 +44,9 @@ const QuizQuestion = ({
               key={answer.id}
               className={buttonClass}
               onClick={() =>
-                !showResult && onAnswerSelected(question.id, answer.id)
+                !showResult &&
+                onAnswerSelected &&
+                onAnswerSelected(question.id, answer.id)
               }
               disabled={showResult}
             >

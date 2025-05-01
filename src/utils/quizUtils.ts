@@ -68,7 +68,7 @@ export const calculateScore = (
   return score;
 };
 
-export const getScoreColor = (score: number, length: number): string => {
+export const getScoreColor = (score: number): string => {
   if (score <= 1) return "bg-red-500 text-white";
 
   if (score <= 3) return "bg-yellow-500 text-white";

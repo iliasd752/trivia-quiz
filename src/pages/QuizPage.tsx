@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import QuizQuestion from "./QuizQuestion";
+import QuizQuestion from "../components/QuizQuestion";
 import { transformQuestions } from "../utils/quizUtils";
 import { fetchQuiz } from "../api/quizApi";
 import { QuizQuestion as QuizQuestionType } from "../types/quiz";
@@ -21,7 +21,7 @@ const QuizPage = () => {
     queryFn: () =>
       fetchQuiz({
         amount: 5,
-        category: parseInt(categoryId || "0"),
+        category: Number(categoryId) || 0,
         difficulty: (difficulty as "easy" | "medium" | "hard") || "easy",
         type: "multiple",
       }),

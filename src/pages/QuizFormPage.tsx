@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { Category } from "../types/quiz";
 
-const QuizForm = () => {
+const QuizFormPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<number>(0);
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>("");
   const navigate = useNavigate();
@@ -102,4 +102,4 @@ const QuizForm = () => {
   );
 };
 
-export default QuizForm;
+export default QuizFormPage;

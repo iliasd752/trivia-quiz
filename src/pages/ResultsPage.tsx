@@ -25,7 +25,7 @@ const ResultsPage = () => {
 
     const calculatedScore = calculateScore(state.questions, state.userAnswers);
     setScore(calculatedScore);
-    setScoreClass(getScoreColor(calculatedScore, state.questions.length));
+    setScoreClass(getScoreColor(calculatedScore));
   }, [state, navigate]);
 
   if (!state || !state.questions) {
@@ -43,8 +43,6 @@ const ResultsPage = () => {
           key={question.id}
           question={question}
           userAnswer={userAnswers[question.id] || null}
-          onAnswerSelected={() => {}}
-          showResult
         />
       ))}
       <div className="mt-8 text-center">
