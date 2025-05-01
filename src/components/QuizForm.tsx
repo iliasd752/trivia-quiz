@@ -93,7 +93,7 @@ const QuizForm = () => {
           id="createBtn"
           onClick={handleCreateQuiz}
           disabled={!selectedCategory || !selectedDifficulty}
-          className="w-full"
+          className="w-full bg-blue-700 hover:bg-blue-800 text-white py-2 px-4 rounded-md transition duration-200 disabled:bg-blue-300 disabled:cursor-not-allowed"
         >
           Create Quiz
         </button>
