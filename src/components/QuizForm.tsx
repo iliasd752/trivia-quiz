@@ -51,7 +51,17 @@ const QuizForm = () => {
       </h1>
       <div className="space-y-6">
         <div className="space-y-2">
-          <label htmlFor=""></label>
+          <label htmlFor="categorySelect" className="block text-sm font-medium">
+            Select Category:
+          </label>
+          <select
+            id="categorySelect"
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(Number(e.target.value))}
+            className="w-full p-2 border rounded-md bg-white"
+          >
+            <option>Select a Category</option>
+          </select>
         </div>
       </div>
     </div>
