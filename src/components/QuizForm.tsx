@@ -60,7 +60,7 @@ const QuizForm = () => {
             onChange={(e) => setSelectedCategory(Number(e.target.value))}
             className="w-full p-2 border rounded-md bg-white"
           >
-            <option value={0}>Select a Category</option>
+            <option>Select a Category</option>
             {categories.map((category) => (
               <option key={category.id} value={category.id}>
                 {category.name}
@@ -68,6 +68,35 @@ const QuizForm = () => {
             ))}
           </select>
         </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor="difficultySelect"
+            className="block text-sm font-medium"
+          >
+            Select Difficulty:
+          </label>
+          <select
+            id="difficultySelect"
+            value={selectedDifficulty}
+            onChange={(e) => setSelectedDifficulty(e.target.value)}
+            className="w-full p-2 border rounded-md bg-white"
+          >
+            <option>Select Difficulty</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <button
+          id="createBtn"
+          onClick={handleCreateQuiz}
+          disabled={!selectedCategory || !selectedDifficulty}
+          className="w-full"
+        >
+          Create Quiz
+        </button>
       </div>
     </div>
   );
