@@ -48,10 +48,13 @@ const ResultsPage = () => {
         />
       ))}
       <div className="mt-8 text-center">
-        <h2 className="text-2xl font-bold mb-4">
-          Your Score: <span className={scoreClass}>{score}</span> out of{" "}
-          {questions.length}
-        </h2>
+        <div
+          className={`p-6 mb-8 rounded-lg shadow-sm border text-center ${scoreClass}`}
+        >
+          <h2 className="text-3xl font-bold mb-2">
+            Your Score: {score} out of {questions.length}
+          </h2>
+        </div>
         <button
           className="w-2/5 bg-blue-700 hover:bg-blue-800 text-white py-2 px-4 rounded-md"
           onClick={() => navigate("/")}

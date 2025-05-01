@@ -68,10 +68,10 @@ export const calculateScore = (
   return score;
 };
 
-export const getScoreColor = (score: number): string => {
-  if (score <= 1) return "text-quiz-incorrect";
+export const getScoreColor = (score: number, length: number): string => {
+  if (score <= 1) return "bg-red-500 text-white";
 
-  if (score <= 3) return "text-quiz-warning";
+  if (score <= 3) return "bg-yellow-500 text-white";
 
-  return "text-quiz-correct";
+  return "bg-green-500 text-white";
 };
