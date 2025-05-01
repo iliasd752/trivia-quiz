@@ -15,10 +15,8 @@ export const shuffleArray = <T>(array: T[]): T[] => {
   return newArray;
 };
 
-export const generateUniqueId = (prefix: string = ""): string => {
-  return `${prefix ? "${prefix}-" : ""}${Date.now().toString(
-    36
-  )}-${Math.random().toString(36).substring(2, 9)}`;
+export const generateUniqueId = (prefix: string = ""): number => {
+  return Date.now() + Math.floor(Math.random() * 1000);
 };
 
 export const transformQuestions = (questions: Question[]): QuizQuestion[] => {
@@ -52,7 +50,7 @@ export const transformQuestions = (questions: Question[]): QuizQuestion[] => {
 
 export const calculateScore = (
   questions: QuizQuestion[],
-  userAnswers: Record<string, string>
+  userAnswers: Record<number, number>
 ): number => {
   let score = 0;
 
