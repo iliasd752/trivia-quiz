@@ -43,6 +43,7 @@ const ResultsPage = () => {
           key={question.id}
           question={question}
           userAnswer={userAnswers[question.id] || null}
+          showResult={true}
         />
       ))}
       <div className="mt-8 text-center">
