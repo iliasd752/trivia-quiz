@@ -68,10 +68,16 @@ export const calculateScore = (
   return score;
 };
 
+const SCORE_COLORS = {
+  RED: "bg-red-500 text-white",
+  YELLOW: "bg-yellow-500 text-white",
+  GREEN: "bg-green-500 text-white",
+};
+
 export const getScoreColor = (score: number): string => {
-  if (score <= 1) return "bg-red-500 text-white";
+  if (score <= 1) return SCORE_COLORS.RED;
 
-  if (score <= 3) return "bg-yellow-500 text-white";
+  if (score <= 3) return SCORE_COLORS.YELLOW;
 
-  return "bg-green-500 text-white";
+  return SCORE_COLORS.GREEN;
 };
