@@ -12,7 +12,7 @@ const App = () => (
     <BrowserRouter>
       <div className="container py-8">
         <Routes>
-          <Route path="/trivia-quiz" element={<QuizFormPage />} />
+          <Route path="/" element={<QuizFormPage />} />
           <Route path="/quiz/:categoryId/:difficulty" element={<QuizPage />} />
           <Route path="/results" element={<ResultsPage />} />
           <Route path="*" element={<NotFoundPage />} />
