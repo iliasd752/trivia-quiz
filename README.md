@@ -1,54 +1,124 @@
-# React + TypeScript + Vite
+# Trivia Quiz Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic trivia quiz application built with React and TypeScript that allows users to create custom quizzes by selecting categories and difficulty levels. Perfect for testing knowledge across various topics with an interactive and engaging interface.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check out the live application: [https://trivia-quiz-teal.vercel.app/](https://trivia-quiz-teal.vercel.app/)
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Category Selection**: Choose from multiple trivia categories
+- **Difficulty Levels**: Select your preferred difficulty (Easy, Medium, Hard)
+- **Interactive Quiz Interface**: 
+  - Hover effects on answer options
+  - Click to select answers
+  - Visual feedback for user interactions
+- **Smart Scoring System**: 
+  - Immediate feedback after quiz submission
+  - Color-coded results (green for correct, red for incorrect)
+  - Final score with color-coded performance indicator
+- **Seamless Navigation**: Easy quiz regeneration with "Generate New Quiz" option
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🛠️ Built With
+
+- **React** - Frontend framework (focus of the project)
+- **TypeScript** - Type safety and better development experience
+- **Vite** - Fast build tool and development server
+- **React Router DOM** - Client-side routing
+- **TanStack React Query** - Data fetching and caching
+- **Axios** - HTTP client for API requests
+- **Tailwind CSS** - Utility-first CSS framework (minimal usage)
+
+## 📋 Prerequisites
+
+Before running this project, make sure you have:
+
+- Node.js (version 16 or higher)
+- npm or yarn package manager
+
+## 🚀 Getting Started
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repository-url>
+   cd trivia-quiz-generator
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   
+   Navigate to `http://localhost:5173` to view the application
+
+## 📖 How to Use
+
+1. **Select Category**: Choose your preferred trivia category from the dropdown menu
+2. **Choose Difficulty**: Pick the difficulty level that suits you
+3. **Create Quiz**: Click the "Create Quiz" button to generate your personalized quiz
+4. **Answer Questions**: 
+   - Hover over answer options to see visual feedback
+   - Click on your chosen answers
+5. **Submit Quiz**: Once all questions are answered, click "Submit Quiz"
+6. **View Results**: See your score and review correct/incorrect answers with color coding
+7. **Generate New Quiz**: Use the "Generate New Quiz" button to start over
+
+## 🎯 Project Purpose
+
+This project was developed as part of a **React Certification** program, with a primary focus on demonstrating proficiency in React concepts and patterns. The application showcases:
+
+- Component composition and state management
+- React Hooks usage
+- API integration with modern data fetching patterns
+- TypeScript integration in React applications
+- Routing and navigation
+- User experience design principles
+
+## 📁 Project Structure
+
+```
+trivia-quiz-generator/
+├── src/
+│   ├── components/     # Reusable React components
+│   ├── pages/         # Page components
+│   ├── hooks/         # Custom React hooks
+│   ├── types/         # TypeScript type definitions
+│   ├── utils/         # Utility functions
+│   └── App.tsx        # Main application component
+├── public/            # Static assets
+└── package.json       # Project dependencies and scripts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🤝 Contributing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This is a certification project, but suggestions and feedback are welcome! Feel free to:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. Fork the project
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👨‍💻 Author
+
+**Ilias Dinia**
+
+Created as part of React Certification requirements.
+
+---
+
+⭐ If you found this project helpful, please give it a star!
